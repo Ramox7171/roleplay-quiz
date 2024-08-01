@@ -18,7 +18,7 @@ export default function QTimer({timeout,onTimeout,mode}){
 
         console.log('SETTING INTERVAL');
        const interval = setInterval(()=>{
-            setTimeRemaining(prevTimeRemaining => prevTimeRemaining-100);
+            setTimeRemaining(prevTimeRemaining => prevTimeRemaining-10);
         },100);
 
         return ()=>{
