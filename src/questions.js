@@ -21,7 +21,7 @@ export default [
     },
     {
       id: 'q3',
-      text: 'Do czego służy /pm ?',
+      text: 'Do czego służy /w ?',
       answers: [
         'Kanał do komunikacji OOC - prywatne wiadomości.',
         'Do przesyłania zgłoszeń administracji/game masterom.',
@@ -36,7 +36,7 @@ export default [
         'Nie, jest to zachowanie NON-RP',
         'Tak, ale nie częściej niż co 20 normalnych kroków.',
         'Można. Nie jest to zakazane.',
-        'Tylko, gdy nie widzi nas inna postać.',
+        'Tak, jeśli wszyscy na serwerze wyrażą zgodę.',
       ],
     },
     {

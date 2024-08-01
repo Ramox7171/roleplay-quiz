@@ -1,32 +1,20 @@
-import { useState, useEffect } from "react";
-export default function QTimer({timeout,onTimeout,mode}){
-
-    const [timeRemaining, setTimeRemaining] =useState(timeout);
-
-    useEffect(()=>{
-        console.log('SETTING TIMEOUT');
-       const timer = setTimeout(onTimeout,timeout);
-       return ()=>{
-        clearTimeout(timer);
-       }
-    },[timeout,onTimeout]);
-
-   
+import { useEffect } from "react";
 
 
-    useEffect(()=>{
+export default function QTimer({ timeout, onTimeout, mode }) {
+  useEffect(() => {
+    const timer = setTimeout(onTimeout, timeout);
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [timeout, onTimeout]);
 
-        console.log('SETTING INTERVAL');
-       const interval = setInterval(()=>{
-            setTimeRemaining(prevTimeRemaining => prevTimeRemaining-100);
-        },100);
-
-        return ()=>{
-            clearInterval(interval);
-        };
-    },[]);
-
-    
-
-    return(<progress id="question-time" max={timeout} value={timeRemaining} className={mode}/>)
+  return (
+    <div id="question-time" className={`progress-container ${mode}`}>
+      <div
+        className="progress-bar"
+        style={{ animationDuration: `${timeout}ms` }}
+      ></div>
+    </div>
+  );
 }

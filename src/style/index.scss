@@ -58,33 +58,26 @@ header {
   text-align: center;
 
   #question {
-    progress {
+    .progress-container {
       width: 50%;
       height: 0.5rem;
       border-radius: 24px;
-      background: #9e5ef8;
-      margin: 0;
+      background: #6a558a;
+      margin: 0 auto;
+      overflow: hidden;
+      position: relative;
 
-      &::-webkit-progress-bar {
-        background: #6a558a;
-        border-radius: 24px;
-      }
-
-      &::-webkit-progress-value {
+      .progress-bar {
+        height: 100%;
         background: #06eb78;
-        border-radius: 24px;
+        width: 100%;
+        animation-name: progress;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
       }
 
-      &.answered {
+      &.answered .progress-bar {
         background: #f8e59c;
-
-        &::-webkit-progress-value {
-          background: #f8e59c;
-        }
-
-        &::-webkit-progress-bar {
-          background: #6a558a;
-        }
       }
     }
 
@@ -96,6 +89,7 @@ header {
       color: #adbdc4;
     }
   }
+}
 
   #answers {
     list-style: none;
@@ -145,7 +139,7 @@ header {
       }
     }
   }
-}
+
 
 #skip-action {
   margin-top: 2rem;
@@ -262,13 +256,22 @@ header {
   }
 }
 
-@keyframes slide-in-from-bottom {
-  0% {
-    opacity: 0;
-    transform: translateY(10%);
+@keyframes progress {
+  from {
+    width: 100%;
   }
+  to {
+    width: 0%;
+  }
+}
+
+@keyframes slide-in-from-bottom {
   100% {
     opacity: 1;
+    transform: translateY(10%);
+  }
+  0% {
+    opacity: 0;
     transform: translateY(0);
   }
 }
