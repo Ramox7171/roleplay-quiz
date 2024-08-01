@@ -39,9 +39,9 @@ const badAnswersPercent = 100 -skippedAnswersPercent - goodAnswersPercent;
             if (answer === null) {
                 isValid ='---';
             } else if (answer === QUESTIONS[index].answers[0]) {
-                isValid= 'TAK----->';
+                isValid= '✔ -';
             } else {
-                isValid=  'NIE----->';
+                isValid=  '✖ -';
             }
 
             return <li key={index}>
