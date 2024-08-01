@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import QTimer from './QTimer.jsx'
+import QTimer from './QTimer.jsx';
 import Answers from './Answers.jsx';
 import QUESTIONS from '../questions.js';
 
@@ -10,16 +10,14 @@ export default function Question({ qIndex, onSelectAnswer, onSkipAnswer }) {
     isGood: null,
   });
 
-  let currentQuestionNumber = qIndex+1;
+  let currentQuestionNumber = qIndex + 1;
   let allQuestionsNumber = QUESTIONS.length;
 
   let timer = 15000;
 
   if (answer.selectedAnswer) {
     timer = 1000;
-  }
-
-  if (answer.isGood !== null) {
+  } else if (answer.isGood !== null) {
     timer = 2000;
   }
 
@@ -50,14 +48,16 @@ export default function Question({ qIndex, onSelectAnswer, onSkipAnswer }) {
   }
 
   return (
-    <div id="question">
+    <div id='question'>
       <QTimer
         key={timer}
         timeout={timer}
         onTimeout={answer.selectedAnswer === '' ? onSkipAnswer : null}
         mode={answerState}
       />
-      <p>{currentQuestionNumber}/{allQuestionsNumber}</p>
+      <p>
+        {currentQuestionNumber}/{allQuestionsNumber}
+      </p>
       <h2>{QUESTIONS[qIndex].text}</h2>
       <Answers
         answers={QUESTIONS[qIndex].answers}
