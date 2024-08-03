@@ -16,7 +16,7 @@ Quiz App is an interactive quiz application built with React. It was created to 
 
 ## Demo
 
-Check out the app in action [here]([link_to_demo](https://hood-quiz.vercel.app/)).
+Check out the app in action [here](https://hood-quiz.vercel.app/)).
 
 ## Features
 
