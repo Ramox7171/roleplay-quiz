@@ -1,6 +1,6 @@
 # Quiz App
 
-Quiz App is an interactive quiz application built with React. It was created to verify the knowledge of players on the The Hood Roleplay server, but you can integrate any question source you like.
+Quiz App is an interactive quiz application built with React. It was created to verify the knowledge of players on the GTA San Andreas Roleplay server, but you can integrate any question source you like.
 ![image](https://github.com/user-attachments/assets/8280d2c4-cd6a-4e24-98c1-a66831ee437f)
 
 
